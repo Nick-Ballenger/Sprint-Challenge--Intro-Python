@@ -29,7 +29,7 @@ def cityreader(cities=[]):
   # TODO Implement the functionality to read from the 'cities.csv' file
   # For each city record, create a new City instance and add it to the 
   # `cities` list
-  
+
   #file being opened needs to change dependent on local environment
   with open('c:/Users/nicks/Documents/Sprint-Challenge--Intro-Python/src/cityreader/cities.csv') as f:
     reader = csv.reader(f)
@@ -79,6 +79,11 @@ for c in cities:
 def cityreader_stretch(lat1, lon1, lat2, lon2, cities=[]):
   # within will hold the cities that fall within the specified region
   within = []
+  lat = [min(lat1, lat2), max(lat1, lat2)]
+  lon = [min(lon1, lon2), max(lon1, lon2)]
+  for city in cities:
+    if city.lat >= lat[0] and city.lat <= lat[1] and city.lon >= lon[0] and city.lon <= lon[1]:
+      within.append(city)    
 
   # TODO Ensure that the lat and lon valuse are all floats
   # Go through each city and check to see if it falls within 
