@@ -13,6 +13,7 @@ class GroundVehicle():
 class Motorcycle(GroundVehicle):
     def __init__(self):
         GroundVehicle.__init__(self, 2)
+        #lets motorcycles give their signature call out to the wild
     def drive(self):
         return 'BRAAAP!!'     
 
